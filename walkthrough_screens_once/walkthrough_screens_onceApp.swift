@@ -11,7 +11,7 @@ import SwiftUI
 struct walkthrough_screens_onceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: OnboardingScreenViewModel())
         }
     }
 }

@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel: OnboardingScreenViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if viewModel.currentPage > viewModel.totalPage {
+            HomeView()
+        } else {
+            ScreenView()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: OnboardingScreenViewModel())
 }
