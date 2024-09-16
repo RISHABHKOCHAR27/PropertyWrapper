@@ -14,6 +14,9 @@ struct ContentView: View {
     var body: some View {
         if viewModel.currentPage > viewModel.totalPage {
             HomeView()
+                .onAppear() {
+                    viewModel.completeOnboarding()
+                }
         } else {
             ScreenView()
         }
